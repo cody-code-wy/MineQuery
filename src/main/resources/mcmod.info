@@ -1,0 +1,16 @@
+[
+{
+  "modid": "minequery",
+  "name": "MineQuery",
+  "description": "Minecraft scripting platform",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "http://minequery.unstable.tech",
+  "updateUrl": "http://update.minequery.unstable.tech",
+  "authorList": ["CodyCode"],
+  "credits": "JQuery for the idea, Mozilla for the library.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

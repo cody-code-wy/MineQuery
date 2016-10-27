@@ -1,11 +1,17 @@
 package tech.unstable.mineQuery;
 
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.logging.log4j.Logger;
+
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import tech.unstable.mineQuery.engine.MineQueryLoader;
 import tech.unstable.mineQuery.eventHandlers.CommonHandlers;
 
 /**
@@ -31,6 +37,21 @@ public class QueryMod {
       logger.warn("Preheating the oven");
 
       MinecraftForge.EVENT_BUS.register(new CommonHandlers());
+
+
+      scripts = new File(preinit.getModConfigurationDirectory().toPath()+"/minequery-scripts");
+      if ( !scripts.exists() ) {
+        scripts.mkdir();
+      }
+
+      for(File f : scripts.listFiles()){
+        try {
+          MineQueryLoader.loadScript(f);
+        } catch (IOException e) {
+          // TODO Auto-generated catch block
+          e.printStackTrace();
+        }
+      }
 
     }
 

@@ -25,5 +25,8 @@ public class EventSelector{
 
 
   public void fire(JsEvent event){
+    Context cx = Context.enter();
+    NativeJavaObject thiz = new NativeJavaObject(cx.initStandardObjects(), event.getValidSelector(), Object.class);
+    function.call(cx, MineQueryLoader.getGlobalScope("FUNCTION"), thiz, new Object[]{event}); // TODO replace with script's name
   }
 }

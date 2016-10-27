@@ -1,10 +1,12 @@
 package tech.unstable.mineQuery;
 
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import tech.unstable.mineQuery.eventHandlers.CommonHandlers;
 
 /**
  * Created by cody on 2016-09-21.
@@ -27,6 +29,8 @@ public class QueryMod {
           System.out.println("Did got get logger! <Bakery - Oven>\n REPORT TO FORGE!");
       }
       logger.warn("Preheating the oven");
+
+      MinecraftForge.EVENT_BUS.register(new CommonHandlers());
 
     }
 

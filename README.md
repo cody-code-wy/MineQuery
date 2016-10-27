@@ -18,6 +18,6 @@ Scripts are loaded from the minequery-scripts folder inside of the config folder
 
 ## Downloads
 
-There are no downlead links yet... sorry.
+Checkout the [releases](https://github.com/cody-code-wy/MineQuery/releases) page on github for the most recent release.
 
 ### For more information and API documentation please visit [our website](http://minequery.unstable.tech)
